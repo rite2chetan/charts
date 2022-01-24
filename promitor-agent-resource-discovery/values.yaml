@@ -16,8 +16,8 @@ azureAuthentication:
   appKey: "" # [Deprecated] Prefer identity.key
   mode: "ServicePrincipal"
   identity:
-    id: ""
-    key: ""
+    id: "024d0d87-9ac6-4e7f-8f2d-ff8784b6907e"
+    key: "eVj7Q~UTWn~pjhNl1W-XoYdimS-a74soxz-N1"
     binding: ""
 
 cache:
@@ -34,25 +34,34 @@ prometheus:
     interval: 60s
     timeout: 10s
 
-telemetry:
-  defaultLogLevel: "Error"
-  applicationInsights:
-    enabled: false
-    key: ""
-    logLevel: ""
-  containerLogs:
-    enabled: true
-    logLevel: ""
+#telemetry:
+#  defaultLogLevel: "Error"
+#  applicationInsights:
+#    enabled: false
+#    key: ""
+#    logLevel: ""
+#  containerLogs:
+#    enabled: true
+#    logLevel: ""
 
 ## Metric Declaration YAML
 azureLandscape:
   cloud: Global
-  tenantId:
-  subscriptions: []
+  tenantId: 42f7676c-f455-423c-82f6-dc2d99791af7
+  subscriptions:
+  - b437f37b-b750-489e-bc55-43044286f6e1
+  - c8214d4e-fe43-4fcd-83de-27a81b7ec907
   # This field is deprecated, use subscriptions instead please
   subscriptionIds: []
 
-resourceDiscoveryGroups: []
+resourceDiscoveryGroups:
+- name: virtual-machine-landscape
+  type: VirtualMachine
+- name: storage-account
+  type: StorageAccount
+  
+telemetry:
+  defaultLogLevel: information
 # Sample resource discovery group configuration below
 # - name: logic-apps-landscape
 #   type: LogicApp
